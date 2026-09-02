@@ -465,6 +465,56 @@ img, svg { display: block; max-width: 100%; }
   .featured-project__copy h3 { font-size: clamp(3rem, 14vw, 5.2rem); }
 }
 
+.gift-qr {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 8rem);
+  padding: clamp(5rem, 9vw, 9rem) 5vw;
+  overflow: hidden;
+  background: #12110f;
+  color: var(--white);
+}
+.gift-qr__visual { position: relative; min-height: clamp(430px, 52vw, 720px); }
+.gift-qr__visual > img { width: 100%; height: 100%; min-height: inherit; object-fit: cover; border: 1px solid var(--line); }
+.gift-qr__card {
+  position: absolute;
+  right: clamp(-1rem, -2vw, -2.5rem);
+  bottom: clamp(1rem, 3vw, 3rem);
+  width: clamp(150px, 19vw, 240px);
+  padding: 1rem;
+  display: grid;
+  gap: .7rem;
+  justify-items: center;
+  background: #f8f7f2;
+  color: #080808;
+  box-shadow: 0 28px 70px rgba(0,0,0,.45);
+  transform: rotate(3deg);
+}
+.gift-qr__card > span { width: 100%; font-size: .52rem; font-weight: 700; letter-spacing: .2em; }
+.gift-qr__card > img { width: 100%; aspect-ratio: 1; }
+.gift-qr__card > small { font-size: .42rem; letter-spacing: .14em; }
+.gift-qr__copy > .kicker { display: block; margin-bottom: 1.4rem; }
+.gift-qr__copy h2 { margin: 0; font: 500 clamp(3.4rem, 6vw, 6.6rem)/.9 var(--display); letter-spacing: -.075em; }
+.gift-qr__copy h2 em { color: var(--accent); font-style: normal; }
+.gift-qr__copy > p { max-width: 470px; margin: 2rem 0 0; color: #aaa9a4; font-size: .95rem; line-height: 1.75; }
+.gift-qr__uses { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 2.2rem; }
+.gift-qr__uses span { padding: .55rem .75rem; border: 1px solid var(--line); border-radius: 999px; color: #8e8d88; font-size: .48rem; letter-spacing: .12em; }
+
+@media (max-width: 840px) {
+  .gift-qr { grid-template-columns: 1fr; padding-left: 1.25rem; padding-right: 1.25rem; }
+  .gift-qr__visual { min-height: 520px; }
+  .gift-qr__copy { max-width: 620px; }
+  .gift-qr__card { right: .8rem; bottom: .8rem; width: min(42vw, 210px); }
+}
+
+@media (max-width: 520px) {
+  .gift-qr__visual { min-height: 430px; }
+  .gift-qr__visual > img { object-position: 43% center; }
+  .gift-qr__card { width: 150px; padding: .75rem; }
+  .gift-qr__copy h2 { font-size: clamp(3.1rem, 15vw, 4.8rem); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

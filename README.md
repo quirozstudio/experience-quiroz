@@ -17,5 +17,6 @@ Abre `index.html` con un servidor local. La experiencia no necesita dependencias
 - `experiencia-cumpleanos-infantil.html`: experiencia completa de cumpleaños infantil con recuerdos, mensajes, razones y deseo interactivo.
 - `cumpleanos.css`, `cumpleanos.js` y `assets/cumple-infantil/`: identidad y recursos del ejemplo infantil basado en el proyecto de cumpleaños de QUIROZ.
 - `experiencia-cumpleanos.html`, `cumpleanos-30.css`, `cumpleanos-30.js` y `assets/cumple-demo/`: demo independiente de cumpleaños adulto (30 años), conservada con su URL original.
+- `assets/qr-gift/`: fotografía de la tarjeta-regalo y QR funcional de demostración para presentar la experiencia como regalo físico.
 
 La demo evita datos personales y materiales reales de clientes. Cada contenido mostrado es conceptual.

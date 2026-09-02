@@ -43,17 +43,17 @@
         <span>EXPERIENCE</span><small>QUIROZ</small>
       </a>
       <nav class="desktop-nav" aria-label="Navegación principal">
-        <a href="#concepto">Concepto</a>
-        <a href="#demo">Demo</a>
-        <a href="#formatos">Formatos</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#concepto">La idea</a>
+        <a href="#contacto">Contacto</a>
       </nav>
       <a class="header-cta" href="#contacto">Crear una experiencia <span aria-hidden="true">↗</span></a>
       <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span class="sr-only">Abrir menú</span>
       </button>
       <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil" hidden>
-        <a href="#concepto">Concepto</a>
-        <a href="#demo">Demo</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#concepto">La idea</a>
         <a href="#formatos">Formatos</a>
         <a href="#contacto">Crear una experiencia</a>
       </nav>
@@ -72,7 +72,7 @@
             Convertimos fotos, palabras, música y momentos reales en un lugar digital creado para una sola persona.
           </p>
           <div class="hero__actions reveal">
-            <a class="pill-button" href="#demo"><span>Vivir la demo</span><span aria-hidden="true">↓</span></a>
+            <a class="pill-button" href="#proyectos"><span>Ver proyectos</span><span aria-hidden="true">↓</span></a>
             <span class="hero__note">Una historia.<br />Una persona.<br />Una experiencia.</span>
           </div>
         </div>
@@ -88,7 +88,7 @@
           <span class="memory-object__label memory-object__label--bottom">HECHO PARA SENTIR</span>
         </div>
 
-        <a class="scroll-cue" href="#concepto"><span>Descubrir</span><i aria-hidden="true"></i></a>
+        <a class="scroll-cue" href="#proyectos"><span>Ver proyectos</span><i aria-hidden="true"></i></a>
       </section>
 
       <div class="ticker" aria-hidden="true">
@@ -98,8 +98,33 @@
         </div>
       </div>
 
+      <section class="featured-projects" id="proyectos" aria-labelledby="featured-title">
+        <div class="section-index reveal"><span>01</span><span>PROYECTOS DESTACADOS</span></div>
+        <div class="featured-projects__heading">
+          <p class="kicker reveal">Dos historias. Dos formas de sentir.</p>
+          <h2 id="featured-title" class="reveal">Mira lo que<br /><em>podemos crear.</em></h2>
+        </div>
+        <div class="featured-projects__grid">
+          <article class="featured-project featured-project--osasuna reveal">
+            <img src="./assets/osasuna-demo/hero-stadium.webp" alt="Escena ficticia de una llegada a El Sadar" width="1717" height="916" loading="lazy" />
+            <div class="featured-project__shade" aria-hidden="true"></div>
+            <div class="featured-project__copy"><span>01 · OSASUNA · PAMPLONA</span><h3>El primer partido<br /><em>en El Sadar.</em></h3><a href="./experiencia-osasuna.html"><span>Ver experiencia</span><i aria-hidden="true">↗</i></a></div>
+          </article>
+          <article class="featured-project featured-project--birthday reveal">
+            <img src="./assets/cumple-infantil/lucia-garden.webp" alt="Lucía, personaje ficticio, entrando en su celebración infantil" width="1600" height="900" loading="lazy" />
+            <div class="featured-project__shade" aria-hidden="true"></div>
+            <div class="featured-project__copy"><span>02 · CUMPLEAÑOS INFANTIL</span><h3>El día de Lucía.<br /><em>7 años para recordar.</em></h3><a href="./experiencia-cumpleanos-infantil.html"><span>Ver experiencia</span><i aria-hidden="true">↗</i></a></div>
+          </article>
+          <article class="featured-project featured-project--birthday-30 reveal">
+            <img src="./assets/cumple-demo/hero-surprise.webp" alt="Lucía, personaje ficticio, descubriendo su fiesta sorpresa de 30 cumpleaños" width="1804" height="872" loading="lazy" />
+            <div class="featured-project__shade" aria-hidden="true"></div>
+            <div class="featured-project__copy"><span>03 · CUMPLEAÑOS · 30 AÑOS</span><h3>Las 30 vueltas<br /><em>al sol de Lucía.</em></h3><a href="./experiencia-cumpleanos.html"><span>Ver experiencia</span><i aria-hidden="true">↗</i></a></div>
+          </article>
+        </div>
+      </section>
+
       <section class="manifesto" id="concepto" aria-labelledby="manifesto-title">
-        <div class="section-index reveal"><span>01</span><span>LA IDEA</span></div>
+        <div class="section-index reveal"><span>02</span><span>LA IDEA</span></div>
         <div class="manifesto__content">
           <p class="manifesto__lead reveal">NO ES UNA WEB.</p>
           <h2 id="manifesto-title" class="reveal">Es ese momento,<br />convertido en <em>lugar.</em></h2>
@@ -117,10 +142,10 @@
       </section>
 
       <section class="demo-section" id="demo" aria-labelledby="demo-title">
-        <div class="section-index section-index--light reveal"><span>02</span><span>PRUEBA LA IDEA</span></div>
+        <div class="section-index section-index--light reveal"><span>03</span><span>EXPLORA EL FORMATO</span></div>
         <div class="demo-section__heading">
-          <p class="kicker reveal">Una experiencia cambia con cada historia</p>
-          <h2 id="demo-title" class="reveal">Elige qué quieres<br /><em>hacer sentir.</em></h2>
+          <p class="kicker reveal">La misma idea cambia con cada historia</p>
+          <h2 id="demo-title" class="reveal">Elige cómo<br /><em>hacerlo sentir.</em></h2>
         </div>
 
         <div class="experience-switcher reveal" role="group" aria-label="Elegir tipo de experiencia">
@@ -171,55 +196,10 @@
           </div>
         </div>
 
-        <article class="example-teaser reveal" aria-labelledby="example-title">
-          <img
-            src="./assets/osasuna-demo/hero-stadium.webp"
-            alt="Álex y su padre, personajes ficticios, llegando al estadio para una experiencia rojilla"
-            width="1717"
-            height="916"
-            loading="lazy"
-          />
-          <div class="example-teaser__shade" aria-hidden="true"></div>
-          <div class="example-teaser__meta">
-            <span>EXPERIENCIA DE EJEMPLO</span>
-            <span>OSASUNA · ESCENAS FICTICIAS</span>
-          </div>
-          <div class="example-teaser__copy">
-            <span>UNA HISTORIA COMPLETA · PAMPLONA</span>
-            <h3 id="example-title">El primer partido<br />rojillo de Álex.</h3>
-            <p>Entra y descubre cómo se siente una experiencia personalizada de principio a fin.</p>
-            <a href="./experiencia-osasuna.html">
-              <span>Vivir el ejemplo completo</span><i aria-hidden="true">↗</i>
-            </a>
-          </div>
-        </article>
-
-        <article class="example-teaser example-teaser--birthday reveal" aria-labelledby="birthday-example-title">
-          <img
-            src="./assets/cumple-demo/hero-surprise.webp"
-            alt="Lucía, personaje ficticio, descubriendo su fiesta sorpresa de cumpleaños"
-            width="1804"
-            height="872"
-            loading="lazy"
-          />
-          <div class="example-teaser__shade" aria-hidden="true"></div>
-          <div class="example-teaser__meta">
-            <span>EXPERIENCIA DE EJEMPLO</span>
-            <span>CUMPLEAÑOS · HISTORIA FICTICIA</span>
-          </div>
-          <div class="example-teaser__copy">
-            <span>UNA HISTORIA COMPLETA · 30 AÑOS</span>
-            <h3 id="birthday-example-title">Las 30 vueltas<br />al sol de Lucía.</h3>
-            <p>Recuerdos, voces, razones y un deseo final reunidos en un regalo que se vive.</p>
-            <a href="./experiencia-cumpleanos.html">
-              <span>Vivir el cumpleaños</span><i aria-hidden="true">↗</i>
-            </a>
-          </div>
-        </article>
       </section>
 
       <section class="formats" id="formatos" aria-labelledby="formats-title">
-        <div class="section-index reveal"><span>03</span><span>FORMATOS</span></div>
+        <div class="section-index reveal"><span>04</span><span>FORMATOS</span></div>
         <div class="formats__heading">
           <h2 id="formats-title" class="reveal">Una idea.<br /><em>Muchas formas.</em></h2>
           <p class="reveal">No trabajamos con plantillas cerradas. Cada formato es solo el principio de una experiencia distinta.</p>
@@ -257,7 +237,7 @@
 
       <section class="ingredients" aria-labelledby="ingredients-title">
         <div class="ingredients__intro">
-          <div class="section-index section-index--light reveal"><span>04</span><span>LA CONSTRUCCIÓN</span></div>
+          <div class="section-index section-index--light reveal"><span>05</span><span>LA CONSTRUCCIÓN</span></div>
           <h2 id="ingredients-title" class="reveal">Cada detalle tiene<br /><em>un porqué.</em></h2>
         </div>
         <div class="ingredient-list">

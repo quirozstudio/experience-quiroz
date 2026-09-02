@@ -420,6 +420,51 @@ img, svg { display: block; max-width: 100%; }
   .footer-brand, .site-footer > span { justify-self: center; }
 }
 
+/* Featured projects — the two experiences that make the concept tangible */
+.featured-projects {
+  padding: clamp(6rem, 10vw, 10rem) 5vw;
+  background: #0b0b0b;
+  color: var(--white);
+}
+.featured-projects__heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 3rem;
+  margin: 4rem 0 3rem;
+}
+.featured-projects__heading .kicker { max-width: 260px; margin: 0 0 .8rem; line-height: 1.6; }
+.featured-projects__heading h2 { margin: 0; font: 500 clamp(3.7rem, 7vw, 7.8rem)/.88 var(--display); letter-spacing: -.075em; text-align: right; }
+.featured-projects__heading h2 em { color: var(--accent); font-style: normal; }
+.featured-projects__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.featured-project { position: relative; min-height: min(55vw, 650px); display: flex; align-items: flex-end; overflow: hidden; border: 1px solid var(--line); background: #151515; }
+.featured-project > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.featured-project:hover > img { transform: scale(1.035); }
+.featured-project__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.04) 15%, rgba(0,0,0,.9) 100%), linear-gradient(90deg, rgba(0,0,0,.42), transparent 72%); }
+.featured-project--birthday { --project-accent: #f2a29b; }
+.featured-project--birthday-30 { --project-accent: #d8b978; }
+.featured-project--birthday-30 .featured-project__shade { background: linear-gradient(180deg, rgba(22,14,24,.04) 15%, rgba(22,14,24,.92) 100%), linear-gradient(90deg, rgba(22,14,24,.42), transparent 72%); }
+.featured-project--birthday .featured-project__shade { background: linear-gradient(180deg, rgba(20,8,18,.04) 15%, rgba(20,8,18,.92) 100%), linear-gradient(90deg, rgba(20,8,18,.42), transparent 72%); }
+.featured-project__copy { position: relative; z-index: 1; width: 100%; padding: clamp(1.5rem, 4vw, 3.5rem); }
+.featured-project__copy > span { color: var(--project-accent, var(--accent)); font-size: .56rem; letter-spacing: .17em; }
+.featured-project__copy h3 { margin: .8rem 0 1.8rem; font: 500 clamp(2.6rem, 4.3vw, 5.3rem)/.88 var(--display); letter-spacing: -.075em; }
+.featured-project__copy h3 em { color: var(--project-accent, var(--accent)); font-style: normal; }
+.featured-project__copy a { display: flex; align-items: center; justify-content: space-between; width: min(100%, 250px); padding: .95rem 1.1rem; border: 1px solid rgba(255,255,255,.38); border-radius: 999px; text-decoration: none; font-size: .65rem; transition: background .25s, color .25s, transform .25s; }
+.featured-project__copy a i { color: var(--project-accent, var(--accent)); font-style: normal; }
+.featured-project__copy a:hover { transform: translateY(-2px); background: var(--project-accent, var(--accent)); border-color: var(--project-accent, var(--accent)); color: #080808; }
+.featured-project__copy a:hover i { color: #080808; }
+
+@media (max-width: 720px) {
+  .featured-projects { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .featured-projects__heading { display: block; margin-top: 3.5rem; }
+  .featured-projects__heading .kicker { margin-bottom: 1.6rem; }
+  .featured-projects__heading h2 { text-align: left; font-size: clamp(3.4rem, 15vw, 5.4rem); }
+  .featured-projects__grid { grid-template-columns: 1fr; }
+  .featured-project { min-height: 590px; }
+  .featured-project__copy { padding: 1.5rem 1.2rem; }
+  .featured-project__copy h3 { font-size: clamp(3rem, 14vw, 5.2rem); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

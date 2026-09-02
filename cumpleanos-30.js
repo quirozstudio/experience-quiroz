@@ -62,10 +62,10 @@ updateBirthdayScroll();
 window.addEventListener('scroll', updateBirthdayScroll, { passive: true });
 
 const timelineStories = [
-  'El día en que una nueva historia empezó sin saber todavía todas las aventuras que traería consigo.',
-  'La época de preguntar por qué, imaginar mundos enteros y convertir cualquier rincón en un juego.',
-  'Llegaron las primeras amistades, los dibujos interminables y las ganas de descubrirlo todo.',
-  'Siete años después: más curiosa, más valiente y con todo lo bonito todavía por vivir.'
+  'El día en que una nueva historia empezó sin saber todavía todo lo bueno que traería consigo.',
+  'La época de preguntar por qué, imaginar mundos enteros y convertir cualquier rincón en una aventura.',
+  'Llegaron las primeras decisiones importantes, las personas elegidas y el valor de empezar a ser una misma.',
+  'Treinta años después: más segura, más libre y todavía capaz de sorprenderse con todo lo que queda por vivir.'
 ];
 
 const yearButtons = [...document.querySelectorAll('.birthday-year')];
@@ -83,13 +83,36 @@ yearButtons.forEach((button) => {
 });
 
 const reasons = [
-  'Porque conviertes cualquier tarde en una aventura.',
-  'Porque tus preguntas hacen que todos miremos de otra manera.',
-  'Porque guardas dibujos que cuentan historias enteras.',
-  'Porque tu risa siempre encuentra a los demás.',
-  'Porque sabes celebrar las cosas pequeñas como si fueran enormes.',
-  'Porque contigo nunca falta un juego nuevo.',
-  'Porque el mundo es más divertido desde que estás en él.'
+  'Porque sabes escuchar incluso cuando nadie encuentra las palabras.',
+  'Porque haces hogar en cualquier mesa donde te sientas.',
+  'Porque recuerdas los detalles que los demás olvidamos.',
+  'Porque tu risa siempre llega antes que cualquier problema.',
+  'Porque nunca preguntas si puedes ayudar: simplemente apareces.',
+  'Porque haces que un martes cualquiera termine siendo una historia.',
+  'Porque has aprendido a elegirte sin dejar de cuidar a los demás.',
+  'Porque contigo las conversaciones importantes no tienen prisa.',
+  'Porque sigues mirando el mundo con curiosidad.',
+  'Porque todavía te emocionan las pequeñas primeras veces.',
+  'Porque sabes celebrar las victorias ajenas como propias.',
+  'Porque has cambiado muchas veces sin dejar de ser tú.',
+  'Porque tu valentía casi siempre parece tranquila.',
+  'Porque sabes pedir perdón y también perdonarte.',
+  'Porque guardas fotografías que nadie más habría conservado.',
+  'Porque haces mejores las sobremesas.',
+  'Porque siempre tienes una canción para cada momento.',
+  'Porque no necesitas tener todas las respuestas para seguir adelante.',
+  'Porque tus abrazos nunca llegan a medias.',
+  'Porque has construido amistades que ya son familia.',
+  'Porque sabes cuándo hablar y cuándo quedarte cerca en silencio.',
+  'Porque sigues encontrando motivos para empezar de nuevo.',
+  'Porque has convertido los errores en dirección.',
+  'Porque haces espacio para que los demás sean ellos mismos.',
+  'Porque cuidas de la gente sin hacer ruido.',
+  'Porque has aprendido a decir que no cuando también era quererte.',
+  'Porque incluso cansada sigues viendo belleza.',
+  'Porque todavía quedan lugares que descubrir contigo.',
+  'Porque estos treinta años solo son el principio.',
+  'Porque el mundo es un poco más amable desde que estás en él.'
 ];
 let reasonIndex = 0;
 const reasonNumber = document.querySelector('#birthdayReasonNumber');
@@ -97,7 +120,7 @@ const reasonText = document.querySelector('#birthdayReasonText');
 
 function showReason(nextIndex) {
   reasonIndex = (nextIndex + reasons.length) % reasons.length;
-  reasonNumber.textContent = `${String(reasonIndex + 1).padStart(2, '0')} / 07`;
+  reasonNumber.textContent = `${String(reasonIndex + 1).padStart(2, '0')} / 30`;
   reasonText.textContent = reasons[reasonIndex];
   reasonText.animate([{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }], { duration: 420, easing: 'ease' });
 }

@@ -169,11 +169,8 @@ img, svg { display: block; max-width: 100%; }
 .memory-object__ring { position: absolute; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; }
 .memory-object__ring--outer { inset: 0; border-style: dashed; animation: orbit 30s linear infinite; }
 .memory-object__ring--middle { inset: 16%; border-color: rgba(var(--accent-rgb), .45); animation: orbit 20s linear reverse infinite; }
-.memory-object__core { position: relative; width: 45%; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; background: radial-gradient(circle at 35% 28%, rgba(255,255,255,.14), rgba(var(--accent-rgb),.28) 32%, #080808 76%); box-shadow: 0 0 90px rgba(var(--accent-rgb), .22); cursor: pointer; transition: transform .4s ease, box-shadow .4s ease; }
-.memory-object__core:hover { transform: scale(1.04); box-shadow: 0 0 120px rgba(var(--accent-rgb), .38); }
-.memory-object__core.is-playing { animation: heartbeat 1.25s ease infinite; }
+.memory-object__core { position: relative; width: 45%; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; background: radial-gradient(circle at 35% 28%, rgba(255,255,255,.14), rgba(var(--accent-rgb),.28) 32%, #080808 76%); box-shadow: 0 0 90px rgba(var(--accent-rgb), .22); }
 .memory-object__initial { font: 500 clamp(4rem, 8vw, 7rem)/1 var(--display); letter-spacing: -.1em; }
-.memory-object__action { position: absolute; bottom: 13%; font-size: .5rem; letter-spacing: .15em; text-transform: uppercase; }
 .memory-object__label { position: absolute; color: #6c6c68; font-size: .48rem; letter-spacing: .18em; }
 .memory-object__label--top { top: 10%; right: 4%; }
 .memory-object__label--bottom { left: 2%; bottom: 16%; }
@@ -323,7 +320,6 @@ img, svg { display: block; max-width: 100%; }
 @keyframes orbit { to { rotate: 360deg; } }
 @keyframes introOrbit { to { transform: rotate(360deg); } }
 @keyframes breathe { 0%,100% { transform: scale(.9); opacity: .65; } 50% { transform: scale(1.08); opacity: 1; } }
-@keyframes heartbeat { 0%,100% { transform: scale(1); } 10% { transform: scale(1.06); } 22% { transform: scale(1); } 34% { transform: scale(1.035); } 48% { transform: scale(1); } }
 @keyframes ticker { to { transform: translateX(-50%); } }
 @keyframes grain { 0% { transform: translate(0,0); } 25% { transform: translate(2%,-3%); } 50% { transform: translate(-3%,2%); } 75% { transform: translate(3%,4%); } 100% { transform: translate(-2%,-3%); } }
 @keyframes modalIn { from { transform: scale(.6); opacity: 0; } }
@@ -1227,6 +1223,20 @@ button:focus-visible {
 
 .process__steps p { color: var(--editorial-muted); }
 
+/* Lighter rhythm: less vertical weight, same emotional hierarchy */
+.hero h2 { font-size: clamp(3.5rem, 6.7vw, 7.7rem); }
+.featured-projects { padding-block: clamp(5rem, 8vw, 8rem); }
+.featured-project { min-height: min(46vw, 580px); }
+.featured-project:first-child { min-height: min(56vw, 700px); }
+.featured-project__copy h3 { font-size: clamp(2.5rem, 4vw, 4.8rem); }
+.manifesto { padding-block: clamp(5.5rem, 9vw, 9rem); }
+.manifesto__content { margin-top: clamp(4rem, 7vw, 7rem); }
+.manifesto__statement { margin-top: clamp(5rem, 8vw, 8rem); }
+.demo-section { padding-block: clamp(5.5rem, 8vw, 8rem); }
+.demo-section__heading { margin-block: 4rem 3rem; }
+.experience-stage { min-height: 700px; }
+.experience-stage__visual { min-height: 570px; }
+
 @media (max-width: 980px) {
   .site-header { height: var(--header-height); margin-top: 8px; width: calc(100% - 16px); }
   .hero::before { inset: 11% 1rem 2rem; }
@@ -1236,8 +1246,8 @@ button:focus-visible {
 }
 
 @media (max-width: 720px) {
-  .featured-project:first-child { grid-column: auto; min-height: 640px; }
-  .featured-project { min-height: 590px; }
+  .featured-project:first-child { grid-column: auto; min-height: 540px; }
+  .featured-project { min-height: 520px; }
 }
 
 @media (max-width: 640px) {
@@ -1252,7 +1262,7 @@ button:focus-visible {
   .featured-projects, .demo-section, .ingredients { background-size: auto; }
   .section-index { padding: .5rem .6rem; }
   .featured-projects__heading { margin-top: 3rem; }
-  .featured-project:first-child { min-height: 600px; }
+  .featured-project:first-child { min-height: 520px; }
   .manifesto::after, .formats::after, .process::after { inset: .6rem; }
   .manifesto__aside { margin-top: 3rem; }
   .experience-switcher { gap: 6px; }

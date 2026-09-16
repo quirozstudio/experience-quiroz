@@ -62,7 +62,6 @@ const skipIntro = document.querySelector('#skipIntro');
 const siteHeader = document.querySelector('#siteHeader');
 const menuToggle = document.querySelector('#menuToggle');
 const mobileNav = document.querySelector('#mobileNav');
-const pulseButton = document.querySelector('#pulseButton');
 const stage = document.querySelector('#experienceStage');
 const switcherButtons = [...document.querySelectorAll('.switcher-button')];
 const chapterButtons = [...document.querySelectorAll('.chapter-button')];
@@ -72,8 +71,6 @@ const closeMemory = document.querySelector('#closeMemory');
 const finishMemory = document.querySelector('#finishMemory');
 
 let activePreset = 'amistad';
-let audioContext;
-let pulseTimer;
 
 function finishIntro() {
   intro.classList.add('is-leaving');
@@ -114,43 +111,6 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.13 }
 );
 document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
-
-function playPulseTone() {
-  audioContext ??= new AudioContext();
-  if (audioContext.state === 'suspended') audioContext.resume();
-  const now = audioContext.currentTime;
-  const oscillator = audioContext.createOscillator();
-  const gain = audioContext.createGain();
-  oscillator.type = 'sine';
-  oscillator.frequency.setValueAtTime(58, now);
-  oscillator.frequency.exponentialRampToValueAtTime(44, now + 0.18);
-  gain.gain.setValueAtTime(0.0001, now);
-  gain.gain.exponentialRampToValueAtTime(0.22, now + 0.025);
-  gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.28);
-  oscillator.connect(gain).connect(audioContext.destination);
-  oscillator.start(now);
-  oscillator.stop(now + 0.3);
-}
-
-function stopPulse() {
-  window.clearInterval(pulseTimer);
-  pulseTimer = undefined;
-  pulseButton.classList.remove('is-playing');
-  pulseButton.setAttribute('aria-pressed', 'false');
-  pulseButton.querySelector('.memory-object__action').textContent = 'Activar latido';
-}
-
-pulseButton.addEventListener('click', () => {
-  if (pulseTimer) {
-    stopPulse();
-    return;
-  }
-  playPulseTone();
-  pulseTimer = window.setInterval(playPulseTone, 1250);
-  pulseButton.classList.add('is-playing');
-  pulseButton.setAttribute('aria-pressed', 'true');
-  pulseButton.querySelector('.memory-object__action').textContent = 'Detener latido';
-});
 
 function setText(selector, value, allowHtml = false) {
   const element = document.querySelector(selector);

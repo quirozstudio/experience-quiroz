@@ -236,3 +236,61 @@ document.addEventListener('keydown', (event) => {
 document.querySelector('#year').textContent = String(new Date().getFullYear());
 
 applyPreset(activePreset);
+
+// Subtle motion layer: keeps the existing interactions while adding depth.
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+const hero = document.querySelector('.hero');
+const memoryObject = document.querySelector('.memory-object');
+
+document.querySelectorAll('.featured-projects__grid, .format-grid, .ingredient-list, .process__steps').forEach((group) => {
+  [...group.children].forEach((item, index) => {
+    item.style.setProperty('--reveal-delay', `${Math.min(index, 4) * 70}ms`);
+  });
+});
+
+function setCardLight(event) {
+  const card = event.currentTarget;
+  const bounds = card.getBoundingClientRect();
+  card.style.setProperty('--card-x', `${event.clientX - bounds.left}px`);
+  card.style.setProperty('--card-y', `${event.clientY - bounds.top}px`);
+}
+
+document.querySelectorAll('.featured-project, .format-card').forEach((card) => {
+  card.addEventListener('pointermove', setCardLight, { passive: true });
+});
+
+function moveMemory(event) {
+  if (!finePointer.matches || reduceMotion.matches) return;
+  const bounds = hero.getBoundingClientRect();
+  const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 20;
+  const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 20;
+  memoryObject.style.setProperty('--mx', `${x}px`);
+  memoryObject.style.setProperty('--my', `${y}px`);
+}
+
+function resetMemory() {
+  memoryObject.style.setProperty('--mx', '0px');
+  memoryObject.style.setProperty('--my', '0px');
+}
+
+hero.addEventListener('pointermove', moveMemory, { passive: true });
+hero.addEventListener('pointerleave', resetMemory, { passive: true });
+
+let motionFrame;
+
+function updateScrollMotion() {
+  motionFrame = undefined;
+  if (reduceMotion.matches) return;
+  const progress = Math.min(window.scrollY / Math.max(hero.offsetHeight, 1), 1);
+  hero.style.setProperty('--hero-lift', `${progress * -34}px`);
+  memoryObject.style.setProperty('--hero-drift', `${progress * 46}px`);
+  memoryObject.style.setProperty('--hero-rotate', `${progress * 5}deg`);
+}
+
+window.addEventListener('scroll', () => {
+  if (motionFrame) return;
+  motionFrame = window.requestAnimationFrame(updateScrollMotion);
+}, { passive: true });
+
+updateScrollMotion();

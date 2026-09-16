@@ -243,7 +243,7 @@ const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
 const hero = document.querySelector('.hero');
 const memoryObject = document.querySelector('.memory-object');
 
-document.querySelectorAll('.featured-projects__grid, .format-grid, .ingredient-list, .process__steps').forEach((group) => {
+document.querySelectorAll('.featured-projects__grid, .process__steps').forEach((group) => {
   [...group.children].forEach((item, index) => {
     item.style.setProperty('--reveal-delay', `${Math.min(index, 4) * 70}ms`);
   });

@@ -1072,6 +1072,12 @@ button:focus-visible {
 
 .site-footer { background: #060605; }
 
+.featured-projects__heading,
+.demo-section__heading { justify-content: flex-end; }
+
+.process { padding-block: clamp(6rem, 9vw, 9rem); }
+.process__steps { margin-top: clamp(4rem, 7vw, 6rem); }
+
 .memory-modal {
   background:
     radial-gradient(circle at center, rgba(var(--accent-rgb),.09), transparent 32%),

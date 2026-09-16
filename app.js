@@ -11,6 +11,9 @@ const presets = {
     eyebrow: 'PARA QUIEN SIEMPRE ESTÁ',
     title: 'Lo vuestro no<br>cabe en una caja.',
     text: 'Una historia construida con recuerdos pequeños que terminaron significándolo todo.',
+    image: './assets/experience-story/amistad.webp',
+    imageAlt: 'Tres amigos recordando juntos viajes, fotografías y mensajes de voz',
+    imageCaption: 'UNA HISTORIA · DE AMISTAD',
     chapters: ['El comienzo', 'Los momentos', 'Lo que queda'],
     modalTitle: 'Aquí empieza<br>vuestro recuerdo.',
     modalText: 'Las historias importantes no necesitan ser perfectas. Solo necesitan ser verdad.'
@@ -24,6 +27,9 @@ const presets = {
     eyebrow: 'PARA LO QUE OS HACE VIBRAR',
     title: 'La pasión también<br>guarda memoria.',
     text: 'El sonido, la espera, el lugar y la gente. Todo aquello que solo entiende quien lo ha vivido.',
+    image: './assets/experience-story/pasion.webp',
+    imageAlt: 'Un adulto y un niño compartiendo la emoción de un partido en el estadio',
+    imageCaption: 'UNA HISTORIA · DE PASIÓN',
     chapters: ['La primera vez', 'El gran día', 'La promesa'],
     modalTitle: 'Nunca fue solo<br>un resultado.',
     modalText: 'Fue el viaje, la voz rota y el abrazo justo cuando todo parecía imposible.'
@@ -37,6 +43,9 @@ const presets = {
     eyebrow: 'PARA VUESTRA PROPIA HISTORIA',
     title: 'Todo lo que pasa<br>cuando os elegís.',
     text: 'Una experiencia íntima que habla de vosotros sin parecerse a ninguna historia de amor prestada.',
+    image: './assets/experience-story/amor.webp',
+    imageAlt: 'Una pareja recorriendo sus fotografías y recuerdos al atardecer',
+    imageCaption: 'UNA HISTORIA · DE AMOR',
     chapters: ['El encuentro', 'Nuestro idioma', 'Lo que viene'],
     modalTitle: 'Volvería a elegirte<br>en cada historia.',
     modalText: 'Incluso sabiendo todos los caminos, volvería exactamente al lugar donde te encontré.'
@@ -50,6 +59,9 @@ const presets = {
     eyebrow: 'PARA TODO LO QUE NOS UNE',
     title: 'Hay voces que siempre<br>nos llevan a casa.',
     text: 'Fotografías, anécdotas y palabras reunidas para que una historia familiar siga creciendo.',
+    image: './assets/experience-story/familia.webp',
+    imageAlt: 'Dos generaciones reuniendo un álbum familiar y antiguas grabaciones de voz',
+    imageCaption: 'UNA HISTORIA · DE FAMILIA',
     chapters: ['De dónde venimos', 'Lo compartido', 'Para siempre'],
     modalTitle: 'La memoria también<br>puede ser hogar.',
     modalText: 'Un lugar donde cada voz, cada gesto y cada fotografía vuelve a tener presente.'
@@ -63,6 +75,8 @@ const siteHeader = document.querySelector('#siteHeader');
 const menuToggle = document.querySelector('#menuToggle');
 const mobileNav = document.querySelector('#mobileNav');
 const stage = document.querySelector('#experienceStage');
+const stageShowcaseImage = document.querySelector('#stageShowcaseImage');
+const stageShowcaseCaption = document.querySelector('#stageShowcaseCaption');
 const switcherButtons = [...document.querySelectorAll('.switcher-button')];
 const chapterButtons = [...document.querySelectorAll('.chapter-button')];
 const memoryModal = document.querySelector('#memoryModal');
@@ -71,6 +85,12 @@ const closeMemory = document.querySelector('#closeMemory');
 const finishMemory = document.querySelector('#finishMemory');
 
 let activePreset = 'amistad';
+let imageSwapTimer;
+
+Object.values(presets).forEach(({ image }) => {
+  const preload = new Image();
+  preload.src = image;
+});
 
 function finishIntro() {
   intro.classList.add('is-leaving');
@@ -130,6 +150,14 @@ function applyPreset(name) {
   setText('#stageEyebrow', preset.eyebrow);
   setText('#stageTitle', preset.title, true);
   setText('#stageText', preset.text);
+  window.clearTimeout(imageSwapTimer);
+  stageShowcaseImage.classList.add('is-changing');
+  imageSwapTimer = window.setTimeout(() => {
+    stageShowcaseImage.src = preset.image;
+    stageShowcaseImage.alt = preset.imageAlt;
+    stageShowcaseCaption.textContent = preset.imageCaption;
+    stageShowcaseImage.classList.remove('is-changing');
+  }, 160);
   setText('#chapterOne', preset.chapters[0]);
   setText('#chapterTwo', preset.chapters[1]);
   setText('#chapterThree', preset.chapters[2]);

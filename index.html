@@ -10,6 +10,7 @@
     />
     <meta name="robots" content="noindex, nofollow" />
     <title>EXPERIENCE — QUIROZ</title>
+    <link rel="preload" as="image" href="./assets/experience-story/hero-memory-3d-v2.webp" type="image/webp" fetchpriority="high" />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23080808'/%3E%3Cpath d='M17 18h31v8H26v7h18v8H26v7h22v8H17z' fill='%23ff5c35'/%3E%3C/svg%3E"
@@ -75,22 +76,26 @@
           </div>
         </div>
 
-        <div class="memory-object" aria-label="Representación abstracta de un recuerdo digital">
+        <div class="memory-object">
           <div class="memory-object__ring memory-object__ring--outer"></div>
           <div class="memory-object__ring memory-object__ring--middle"></div>
-          <div class="memory-object__core" aria-hidden="true">
-            <span class="memory-object__initial">E</span>
+          <div class="memory-object__stage" aria-hidden="true"></div>
+          <div class="memory-object__art-wrap">
+            <img
+              class="memory-object__art"
+              src="./assets/experience-story/hero-memory-3d-v2.webp"
+              alt="Escultura tridimensional de una memoria digital formada por fotografías, una onda de voz, palabras y una línea temporal alrededor de la letra E"
+              width="1254"
+              height="1254"
+              decoding="async"
+              fetchpriority="high"
+            />
           </div>
-          <span class="memory-object__label memory-object__label--top">MEMORIA / 01</span>
-          <span class="memory-object__label memory-object__label--bottom">HECHO PARA SENTIR</span>
-          <figure class="hero-memory-card hero-memory-card--one" aria-hidden="true">
-            <img src="./assets/experience-story/memories.webp" alt="" width="1536" height="1024" decoding="async" />
-            <figcaption>FOTOS · PALABRAS</figcaption>
-          </figure>
-          <figure class="hero-memory-card hero-memory-card--two" aria-hidden="true">
-            <img src="./assets/experience-story/devices.webp" alt="" width="1586" height="992" decoding="async" />
-            <figcaption>VOZ · MÚSICA</figcaption>
-          </figure>
+          <span class="memory-object__label memory-object__label--top">ARCHIVO EMOCIONAL / 001</span>
+          <span class="memory-object__label memory-object__label--bottom">HECHO PARA UNA SOLA PERSONA</span>
+          <div class="memory-object__edition" aria-hidden="true">
+            <span>FOTOGRAFÍA</span><i></i><span>VOZ</span><i></i><span>MÚSICA</span><i></i><span>PALABRAS</span>
+          </div>
         </div>
 
       </section>
